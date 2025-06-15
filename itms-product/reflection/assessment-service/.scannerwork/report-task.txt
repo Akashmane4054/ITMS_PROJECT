@@ -1,0 +1,6 @@
+projectKey=EHR-SCAN
+serverUrl=http://localhost:7092
+serverVersion=24.12.0.100206
+dashboardUrl=http://localhost:7092/dashboard?id=EHR-SCAN
+ceTaskId=a2f4cf9f-ea34-4fa2-9cdd-d289c9e202e6
+ceTaskUrl=http://localhost:7092/api/ce/task?id=a2f4cf9f-ea34-4fa2-9cdd-d289c9e202e6

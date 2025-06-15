@@ -1,0 +1,113 @@
+spring:
+  profiles:
+    active: sit
+  application:
+    name: edge-service
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+  codec:
+    max-in-memory-size: 10MB 
+    multipart:
+      max-body-size: 200MB
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      routes:     
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/edge-service/user-service/**
+          filters:
+            - StripPrefix=1
+
+
+            
+server:
+  servlet:
+    context-path: /edge-service
+app:
+  allowed-origins:  "https://adminsit.privezi.solutions , https://sit.privezi.solutions" 
+  security:
+    oauth2:
+      client:
+        registration:
+          ehr:
+            client-id: ehr
+            client-secret: ehrsecret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: openid, profile
+        provider:
+          ehr-provider:
+            authorization-uri: http://localhost:9013/oauth-server/oauth/authorize
+            token-uri: http://localhost:9013/oauth-server/oauth/token
+            user-info-uri: http://localhost:9013/oauth-server/user
+            user-name-attribute: sub
+  session:
+    creation-policy: ALWAYS
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+   config:
+     default:
+       connectTimeout: 160000000
+       readTimeout: 160000000  
+
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 350000
+
+ribbon:
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
+  ConnectTimeout: 350000
+  ReadTimeout: 350000
+  OkToRetryOnAllOperations: false
+
+jwt:
+  auth:
+    header: X-AUTH-HEADER
+ 
+logging:
+  file:
+   name: logs/app.log
+  pattern:
+    file: "%d %-5level [%thread] %logger{0} : %msg%n"
+  level:
+    org.springframework.security: DEBUG
+    com.ehr: DEBUG
+    org.netflix: INFO
+
+corsCofig:
+  allowedOrigin: http://103.186.184.26
+       
+---
+spring:
+  config:
+    activate:
+      on-profile: sit
+  cloud:
+    discovery:
+      enabled: true
+    zookeeper:
+      connect-string: localhost:2181
+      discovery:
+        enabled: true
+        root: /services
+        instance-port: ${server.port}
+        instance-id: ${spring.application.name}:${server.port}

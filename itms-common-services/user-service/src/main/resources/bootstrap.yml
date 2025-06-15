@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: user-service
+  profiles:
+    active: sit
+  jmx:
+    default-domain: user-service  
+ 
+---
+spring:
+  config:
+    activate:
+      on-profile: sit
+  cloud:
+    config:
+      uri: http://localhost:9001/config-server
+server:
+  servlet:
+    context-path: /user-service
+  port: 9006
+
+
+ 
+ 
+ 
+    
+   

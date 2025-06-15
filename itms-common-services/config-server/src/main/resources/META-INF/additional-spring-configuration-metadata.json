@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "swagger.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'swagger.enabled'"
+  },
+  {
+    "name": "acl.swagger.access",
+    "type": "java.lang.String",
+    "description": "A description for 'acl.swagger.access'"
+  },
+  {
+    "name": "acl.masking.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'acl.masking.enabled'"
+  },
+  {
+    "name": "acl.module_field_validation.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'acl.module_field_validation.enabled'"
+  },
+  {
+    "name": "acl.applicableMaskActions",
+    "type": "java.lang.String",
+    "description": "A description for 'acl.applicableMaskActions'"
+  }
+]}

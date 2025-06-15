@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <logger name="org.springframework.web" level="DEBUG"/>
+    <springProperty scope="context" name="springAppName"
+                    source="spring.application.name"/>
+    <property name="LOG_PATH" value="/opt/itms/logs/"/>
+
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([${springAppName},%X{traceId}]) %highlight(%-5level) %logger.%M - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="SAVE-TO-FILE-ROLL"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${springAppName}.log</file>
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([${springAppName},%X{traceId}]) %highlight(%-5level) %logger.%M - %msg%n
+            </Pattern>
+        </encoder>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_PATH}/archived/${springAppName}.%d{dd-MM-yyyy}.log
+            </fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+
+
+    </appender>
+
+    <springProfile name="def">
+        <root level="debug">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="info">
+            <appender-ref ref="SAVE-TO-FILE-ROLL"/>
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="qa">
+        <root level="info">
+            <appender-ref ref="SAVE-TO-FILE-ROLL"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="uat">
+        <root level="info">
+            <appender-ref ref="SAVE-TO-FILE-ROLL"/>
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+    
+    <springProfile name="sit">
+        <root level="info">
+            <appender-ref ref="SAVE-TO-FILE-ROLL"/>
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+</configuration>

@@ -1,0 +1,14 @@
+{
+	"UserListing": [
+		"userId",
+		"firstName",
+		"lastName",
+		"emailAddress"
+	],
+	"reportIds": [
+		"reportId",
+		"userId",
+		"createdOn",
+		"createdBy"
+	]
+}

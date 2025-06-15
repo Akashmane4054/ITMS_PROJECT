@@ -1,0 +1,31 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.itms</groupId>
+		<artifactId>itms-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../itms-parent</relativePath>
+	</parent>
+	<artifactId>itms-product</artifactId>
+	<packaging>pom</packaging>
+	<name>ehr product</name>
+
+	<modules>
+		<module>reflection</module>
+		<module>ehnote</module>
+		<module>cravx</module>
+		<module>lifemart</module>
+		<module>dynamicQR</module>
+	</modules>
+sssssss
+	<dependencies>
+		<dependency>
+			<groupId>com.ehr</groupId>
+			<artifactId>product-service-starter</artifactId>
+			<version>${com.itms.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

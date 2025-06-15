@@ -1,0 +1,14 @@
+{
+	"UserListing": [
+		"userId",
+		"firstName",
+		"lastName",
+		"emailAddress"
+	],
+	"assessmentIds": [
+		"assessmentId",
+		"userId",
+		"createdOn",
+		"createdBy"
+	]
+}

@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: edge-service
+  config:
+    import: optional:configserver:http://localhost:9001/config-server
+  jmx:
+    default-domain: edge-service
+
+server:
+  servlet:
+    context-path: /edge-service
+  port: 9010
+
+---
+spring:
+  application:
+    name: edge-service
+  config:
+    import: configserver:http://localhost:9001/config-server
+    activate:
+      on-profile: sit
+  cloud:
+    config:
+      uri: http://localhost:9001/config-server
+server:
+  servlet:
+    context-path: /edge-service
+  port: 9010

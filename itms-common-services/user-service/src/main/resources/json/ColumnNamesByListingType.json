@@ -1,0 +1,16 @@
+{
+	"UserListing": [
+		"userId",
+		"userFirstName",
+		"userLastName",
+		"fullName",
+		"emailAddress",
+		"mobileNo",
+		"createdOn",
+		"createdById",
+		"language"
+	],
+	"branchIds": [
+		"branchId"
+	]
+}

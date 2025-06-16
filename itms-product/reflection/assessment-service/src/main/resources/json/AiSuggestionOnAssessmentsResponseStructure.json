@@ -1,9 +1,0 @@
-{
-	"responseStructure": {
-		"suggestions": {
-			"29": "{questionnaire id} suggestion",
-			"45": "{questionnaire id} suggestion"
-		},
-		"overall_suggestion": "Overall suggestion considering all the suggestions"
-	}
-}

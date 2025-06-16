@@ -1,24 +1,21 @@
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.itms</groupId>
-	<artifactId>roots</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>itms Root</name>
+    <groupId>com.itms</groupId>
+    <artifactId>roots</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<modules>
-		<module>itms-common</module>
-		<module>itms-starters</module>
-		<module>itms-parent</module>
-		<module>itms-dependencies</module>
-		<module>itms-product</module>
-	<!--<module>itms-gateway</module> -->
-		<module>itms-common-services</module>
-		<module>itms-services-parent</module>
-	</modules>
-
-
+    <modules>
+        <module>itms-dependencies</module>
+        <module>itms-parent</module>
+        <module>itms-common</module>
+        <module>itms-common-services</module>
+        <module>itms-product-services</module>
+        <module>itms-services-parent</module>
+        <module>itms-starters</module>
+    </modules>
 </project>

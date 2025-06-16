@@ -10,13 +10,14 @@
 		<relativePath>../itms-parent</relativePath>
 	</parent>
 
-	<artifactId>itms-common-services</artifactId>
+	<artifactId>itms-product-services</artifactId>
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>config-server</module>
-		<module>discovery-service</module>
-		<module>edge-service</module>
-		<!--<module>user-service</module>-->
+		
 	</modules>
 </project>
+
+
+
+

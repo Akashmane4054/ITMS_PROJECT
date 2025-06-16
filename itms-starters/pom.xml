@@ -6,48 +6,30 @@
     <!-- Inherit company-wide parent POM -->
     <parent>
         <groupId>com.itms</groupId>
-        <artifactId>itms-parent</artifactId>
+        <artifactId>roots</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../itms-parent</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>itms-starters</artifactId>
     <packaging>pom</packaging>
     <name>itms-starters</name>
 
-    <!-- Java & Spring versions -->
-    <properties>
-        <java.version>17</java.version>
-        <spring-boot.version>3.3.3</spring-boot.version>
-        <spring-cloud.version>2023.0.3</spring-cloud.version>
-        <hibernate.version>6.2.5.Final</hibernate.version>
-    </properties>
+    <!-- All starter modules -->
+    <modules>
+        <module>product-service-starter</module>
+    </modules>
 
-    <!-- Manage dependency versions -->
     <dependencyManagement>
         <dependencies>
-            <!-- Spring Boot BOM -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- Spring Cloud BOM -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>3.3.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <!-- All starter modules -->
-    <modules>
-        <module>product-service-starter</module>
-    </modules>
 </project>

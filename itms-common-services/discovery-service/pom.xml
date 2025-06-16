@@ -32,32 +32,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-    		<groupId>org.springframework.cloud</groupId>
-    		<artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
-		</dependency>
-		
-		
-		
-		
+
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -72,7 +52,8 @@
 	<build>
 		<finalName>discovery-service</finalName>
 		<plugins>
-			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+			<!-- <plugin> <groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId> 
 				</plugin> -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -117,7 +98,8 @@
 									<goal>copy-resources</goal>
 								</goals>
 								<configuration>
-									<outputDirectory>${package.location}/${project.name}-deployable</outputDirectory>
+									<outputDirectory>
+										${package.location}/${project.name}-deployable</outputDirectory>
 									<resources>
 										<resource>
 											<directory>${basedir}/ext-resources</directory>

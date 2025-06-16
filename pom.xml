@@ -15,7 +15,7 @@
 		<module>itms-parent</module>
 		<module>itms-dependencies</module>
 		<module>itms-product</module>
-		<module>itms-gateway</module>
+	<!--<module>itms-gateway</module> -->
 		<module>itms-common-services</module>
 		<module>itms-services-parent</module>
 	</modules>

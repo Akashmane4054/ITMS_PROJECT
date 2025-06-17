@@ -1,0 +1,15 @@
+server:
+  port: 9000
+#  servlet:
+#    context-path: /discovery-service
+
+spring:
+  application:
+    name: discovery-server
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false

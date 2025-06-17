@@ -13,6 +13,7 @@
         <module>itms-dependencies</module>
         <module>itms-parent</module>
         <module>itms-common</module>
+         <module>itms-gateway</module>
         <module>itms-common-services</module>
         <module>itms-product-services</module>
         <module>itms-services-parent</module>

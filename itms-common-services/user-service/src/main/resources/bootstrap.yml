@@ -8,4 +8,4 @@ spring:
       fail-fast: true
 
   profiles:
-    active: dev   # assuming your config-server has user-service-dev.yml
+    active: dev

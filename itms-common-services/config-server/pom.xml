@@ -13,9 +13,8 @@
 		<java.version>17</java.version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
-		<com.ehr.version>0.0.1-SNAPSHOT</com.ehr.version>
+		<com.itms.version>0.0.1-SNAPSHOT</com.itms.version>
 		<spring.boot.version>3.3.3</spring.boot.version>
-		<mysql.version>8.0.33</mysql.version>
 	</properties>
 	<artifactId>config-server</artifactId>
 	<dependencies>

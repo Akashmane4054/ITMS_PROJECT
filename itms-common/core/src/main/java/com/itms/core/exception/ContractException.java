@@ -1,67 +1,65 @@
 package com.itms.core.exception;
 
+import javax.naming.Binding;
+
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.BindingResult;
 
-public class ContractException extends Throwable {
+public class ContractException extends RuntimeException {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private HttpStatus errorcode;
+	private HttpStatus errorCode;
+	private String description;
+	private Binding bindingResult;
+	private String parameter;
 
-    private String description;
+	public ContractException(Binding bindingResult) {
+		super();
+		this.bindingResult = bindingResult;
+	}
 
-    private BindingResult bindingResult;
+	public ContractException(HttpStatus errorCode, String description) {
+		super(description);
+		this.errorCode = errorCode;
+		this.description = description;
+	}
 
-    private String parameter;
+	public ContractException(HttpStatus errorCode, String description, String parameter) {
+		super(description);
+		this.errorCode = errorCode;
+		this.description = description;
+		this.parameter = parameter;
+	}
 
-    public ContractException(BindingResult bindingResult) {
-        super();
-        this.bindingResult = bindingResult;
-    }
+	public HttpStatus getErrorCode() {
+		return errorCode;
+	}
 
-    public ContractException(HttpStatus errorcode, String description) {
-        super();
-        this.errorcode = errorcode;
-        this.description = description;
-    }
+	public void setErrorCode(HttpStatus errorCode) {
+		this.errorCode = errorCode;
+	}
 
-    public ContractException(HttpStatus errorcode, String description, String parameter) {
-        super();
-        this.parameter = parameter;
-        this.errorcode = errorcode;
-        this.description = description;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public String getParameter() {
-        return parameter;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public void setParameter(String parameter) {
-        this.parameter = parameter;
-    }
+	public Binding getBindingResult() {
+		return bindingResult;
+	}
 
-    public HttpStatus getErrorcode() {
-        return errorcode;
-    }
+	public void setBindingResult(Binding bindingResult) {
+		this.bindingResult = bindingResult;
+	}
 
-    public void setErrorcode(HttpStatus errorcode) {
-        this.errorcode = errorcode;
-    }
+	public String getParameter() {
+		return parameter;
+	}
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BindingResult getBindingResult() {
-        return bindingResult;
-    }
-
-    public void setBindingResult(BindingResult bindingResult) {
-        this.bindingResult = bindingResult;
-    }
+	public void setParameter(String parameter) {
+		this.parameter = parameter;
+	}
 }

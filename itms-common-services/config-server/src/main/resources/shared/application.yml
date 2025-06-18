@@ -3,7 +3,8 @@ spring:
     url: jdbc:oracle:thin:@//10.43.50.201:1552/ITMS_UAT
     username: autosys
     password: autosys_123
-    driver-class-name: oracle.jdbc.OracleDriver
+    driver-class-name: oracle.jdbc.OracleDriver		
+
     tomcat:
       test-while-idle: true
       initial-size: 5

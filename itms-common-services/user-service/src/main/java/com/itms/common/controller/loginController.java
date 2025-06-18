@@ -1,6 +1,4 @@
-package com.itms.user.controller;
-
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+package com.itms.common.controller;
 
 import java.util.Map;
 
@@ -10,12 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itms.common.domain.EmployeeMaster;
+import com.itms.common.service.LoginService;
 import com.itms.core.exception.BussinessException;
 import com.itms.core.exception.ContractException;
 import com.itms.core.exception.TechnicalException;
 import com.itms.core.util.LogUtil;
-import com.itms.user.domain.EmployeeMaster;
-import com.itms.user.service.LoginService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,7 +28,7 @@ public class loginController {
 	@PostMapping(value = "/itmsLogin")
 	public Map<String, Object> itmsLogin(@RequestBody EmployeeMaster employeeMaster)
 			throws TechnicalException, BussinessException, ContractException {
-		log.info(LogUtil.presentationLogger("", "/itmsLogin"));
+//		log.info(LogUtil.presentationLogger("", "/itmsLogin"));
 		return loginService.itmsLogin(employeeMaster);
 	}
 

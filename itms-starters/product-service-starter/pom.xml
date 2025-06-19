@@ -39,8 +39,7 @@
 		<!-- Oracle JDBC Driver -->
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
-			<artifactId>ojdbc8</artifactId>
-			<version>${ojdbc.version}</version>
+			<artifactId>ojdbc8</artifactId>	
 			<scope>runtime</scope>
 		</dependency>
 
@@ -54,8 +53,7 @@
 		<dependency>
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-envers</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
+			</dependency>
 
 		<!-- Local Core Module -->
 		<dependency>

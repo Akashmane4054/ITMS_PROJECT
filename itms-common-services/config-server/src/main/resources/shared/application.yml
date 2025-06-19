@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@//10.43.50.201:1552/ITMS_UAT
-    username: autosys
-    password: autosys_123
-    driver-class-name: oracle.jdbc.OracleDriver		
+    url: jdbc:oracle:thin:@10.43.50.201:1552:itmsuat
+    username: AUTOSYS
+    password: AUTOSYS_123
+    driver-class-name: oracle.jdbc.OracleDriver
 
     tomcat:
       test-while-idle: true

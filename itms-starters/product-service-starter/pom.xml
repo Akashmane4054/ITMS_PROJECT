@@ -36,12 +36,13 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<!-- Oracle JDBC Driver -->
+
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
-			<artifactId>ojdbc8</artifactId>	
-			<scope>runtime</scope>
+			<artifactId>ojdbc8</artifactId>
+			<version>21.9.0.0</version>
 		</dependency>
+
 
 		<!-- Spring Boot Validation -->
 		<dependency>
@@ -53,7 +54,7 @@
 		<dependency>
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-envers</artifactId>
-			</dependency>
+		</dependency>
 
 		<!-- Local Core Module -->
 		<dependency>

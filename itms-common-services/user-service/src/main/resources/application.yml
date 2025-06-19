@@ -2,7 +2,7 @@ spring:
   application:
     name: user-service
   profiles:
-    active: sit
+    active: main
 
 server:
   servlet:
@@ -14,7 +14,7 @@ server:
 spring:
   config:
     activate:
-      on-profile: sit
+      on-profile: main
   cloud:
     config:
       uri: http://localhost:9001/config-server

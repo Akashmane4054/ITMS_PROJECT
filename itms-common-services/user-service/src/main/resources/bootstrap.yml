@@ -7,4 +7,4 @@ spring:
       fail-fast: true
 
   profiles:
-    active: sit
+    active: main

@@ -1,39 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.itms</groupId>
-        <artifactId>itms-dependencies</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../itms-dependencies</relativePath>
-    </parent>
+	<parent>
+		<groupId>com.itms</groupId>
+		<artifactId>itms-dependencies</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../itms-dependencies</relativePath>
+	</parent>
 
-    <groupId>com.itms</groupId>
-    <artifactId>itms-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
-    <properties>
-        <java.version>17</java.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- Spring Boot BOM and other central dependency management -->
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+	<artifactId>itms-parent</artifactId>
+	<packaging>pom</packaging>
 </project>

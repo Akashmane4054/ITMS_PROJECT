@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 public class EmployeeMaster {
 
     @Id()
-    @Column(name = "emp_id")
     private String empId;
 
     @Column(name = "emp_name")

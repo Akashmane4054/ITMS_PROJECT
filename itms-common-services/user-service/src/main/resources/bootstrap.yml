@@ -1,10 +1,13 @@
 spring:
   application:
     name: user-service
+  profiles:
+    active: main
+---
+spring:
+  config:
+    activate:
+      on-profile: main
   cloud:
     config:
       uri: http://localhost:9001/config-server
-      fail-fast: true
-
-  profiles:
-    active: main

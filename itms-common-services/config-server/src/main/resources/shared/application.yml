@@ -1,16 +1,14 @@
-
 spring:
   datasource:
-    url: jdbc:oracle:thin:@10.43.50.201:1552:itmsuat
-    username: AUTOSYS
-    password: AUTOSYS_123
-    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:mysql://localhost:3306/itms_project
+    username: root
+    password: Mane@54321!
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
     tomcat:
       test-while-idle: true
       initial-size: 5
-      max-total: 50 
-
+      max-total: 50
       max-idle: 20
       min-idle: 10
       max-wait: 20000
@@ -21,4 +19,4 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.Oracle12cDialect
+        dialect: org.hibernate.dialect.MySQL8Dialect

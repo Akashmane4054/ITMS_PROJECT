@@ -10,11 +10,7 @@ server:
   port: 8081
 
 ---
-
 spring:
   config:
     activate:
       on-profile: main
-  cloud:
-    config:
-      uri: http://localhost:9001/config-server

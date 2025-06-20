@@ -9,15 +9,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-
 	<properties>
 		<com.itms.version>0.0.1-SNAPSHOT</com.itms.version>
 	</properties>
 
-
 	<dependencyManagement>
 		<dependencies>
-			<!-- Common versions for all modules -->
+			<!-- Centralized dependency versions -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
@@ -26,17 +24,26 @@
 				<scope>import</scope>
 			</dependency>
 
+			<!-- Optionally control versions of other dependencies -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-devtools</artifactId>
 				<version>3.3.3</version>
+				<scope>runtime</scope>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-config</artifactId>
+				<version>4.1.1</version> <!-- specify version if managing -->
 			</dependency>
 
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>8.3.0</version> <!-- specify version -->
+				<scope>runtime</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

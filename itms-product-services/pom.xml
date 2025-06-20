@@ -14,11 +14,18 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		
+
 	</modules>
-	
-	
+
+
 	<dependencies>
+		<dependency>
+			<groupId>com.itms</groupId>
+			<artifactId>product-service-starter</artifactId>
+			<version>${com.itms.version}</version>
+		</dependency>
+
+
 		<!--itms Core Dependency -->
 		<dependency>
 			<groupId>com.itms</groupId>
